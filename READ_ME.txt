@@ -14,3 +14,6 @@
 4. Migrate django's models by typing command: "python manage.py migrate"
 5. Open your browser and type: "http://127.0.0.1:8000/flowers" -> opens table-view with filtering options
 6. URL: ".../flowers/<int:id>" <- (type in an integer number) -> opens flower-view
+
+-- TASK 5 --
+-- Docker container --
