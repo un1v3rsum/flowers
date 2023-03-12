@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers</title>
+</head>
+<body>
+
+    <form align="left" method="get">
+        {{ filtered_flowers.form.as_p }}
+        <input type="submit" value="FILTER">
+    </form>
+
+
+        <table style="width:100%" align="center" border="1px">
+
+            <tr bgcolor="orange">
+                <th>Sepal length</th>
+                <th>Sepal ratio</th>
+                <th>Sepal width</th>
+                <th>Petal length</th>
+                <th>Petal ratio</th>
+                <th>Petal width</th>
+                <th>Species</th>
+            </tr>
+
+            {% for flower in filtered_flowers.qs %}
+            <tr style="text-align:center;">
+                <td>{{ flower.sepal_length }}</td>
+                <td>{{ flower.sepal_ratio }}</td>
+                <td>{{ flower.sepal_width }}</td>
+                <td>{{ flower.petal_length }}</td>
+                <td>{{ flower.petal_ratio }}</td>
+                <td>{{ flower.petal_width }}</td>
+                <td>{{ flower.species }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+</body>
+</html>
