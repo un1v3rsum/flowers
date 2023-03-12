@@ -7,29 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowers</title>
 </head>
-<body><form>
-    <input type="radio" id="html" name="fav_language" value="HTML">
-    <label for="html">HTML</label><br>
-    <input type="radio" id="css" name="fav_language" value="CSS">
-    <label for="css">CSS</label><br>
-    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-    <label for="javascript">JavaScript</label>
-</form>
-    <div class="form-row">
-        <div class="form-group col-md-2 col-lg-2">
-            <label for="viewCountMin">Minimum View Count</label>
-            <input type="number" min=0 class="form-control" id="viewCountMin" placeholder="0" name="view_count_min">
-        </div>
-        <div class="form-group col-md-2 col-lg-2">
-            <label for="viewCountMax">Maximum View Count</label>
-            <input type="number" min=0 class="form-control" id="viewCountMax" placeholder="10000?" name="view_count_max">
-        </div>
+<body>
 
     <form align="left" method="get">
         {{ filtered_flowers.form.as_p }}
         <input type="submit" value="FILTER">
     </form>
-
+    <form method="POST" >
+        {% csrf_token %}
+        <select name="species">
+            <option selected disabled=true>-- select species --</option>
+            <option>setosa</option>
+            <option>versicolor</option>
+            <option>virginica</option>
+        </select>
+        <hr/>
 
         <table style="width:100%" align="center" border="1px">
 

@@ -9,11 +9,6 @@ class Flower(models.Model):
     petal_ratio = models.FloatField(max_length=3)
     petal_width = models.FloatField(max_length=3)
     species = models.CharField(max_length=100)
-    #new class to filter species by selecting them
-    class Meta:
-        db_table = 'flowers_flower'
-    class SpeciesChoices(models.TextChoices):
-        SETOSA = 'S'
-        VERSICOLOR = 'E'
-        VIRGINICA = 'I'
+
+
 
