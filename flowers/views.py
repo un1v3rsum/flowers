@@ -18,7 +18,7 @@ def flower_list(request, format=None):
     #print(Flower.objects.aggregate(count = Count('id'), minSepalL = Min('sepal_length')))
     return render(request, 'base.html',context=context)
 
-making changes
+making changes now
 #single flower view
 @api_view(['GET', 'PUT', 'DELETE'])
 def flower_detail(request,id, format=None):
