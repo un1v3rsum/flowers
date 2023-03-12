@@ -10,7 +10,6 @@ from django.shortcuts import render
 #main page view
 @api_view(['GET', 'POST'])
 def flower_list(request, format=None):
-
     context = {}
     filtered_flowers = FlowerFilter(request.GET, queryset=Flower.objects.all())
     context['filtered_flowers'] = filtered_flowers
@@ -18,7 +17,6 @@ def flower_list(request, format=None):
     #print(Flower.objects.aggregate(count = Count('id'), minSepalL = Min('sepal_length')))
     return render(request, 'base.html',context=context)
 
-making changes now
 #single flower view
 @api_view(['GET', 'PUT', 'DELETE'])
 def flower_detail(request,id, format=None):
