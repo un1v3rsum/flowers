@@ -12,6 +12,7 @@ from django.shortcuts import render
 def flower_list(request, format=None):
     context = {}
     filtered_flowers = FlowerFilter(request.GET, queryset=Flower.objects.all())
+    #TO-DO -> make "species" filter selectable by attribute
     context['filtered_flowers'] = filtered_flowers
     #TO-DO aggregate - average and max
     #print(Flower.objects.aggregate(count = Count('id'), minSepalL = Min('sepal_length')))
