@@ -7,7 +7,7 @@
                             sepal/petal size: from MIN to MAX selection & asc/desc order)
 *Django aggregation?
 
-4. Optimize add-ons, structurize project wkdir.
+4. Optimize add-ons, structurize project directory.
 
 5. Troubleshoot get_data.py
 *In the beginning of the project more outliers were removed.

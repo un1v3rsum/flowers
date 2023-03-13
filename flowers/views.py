@@ -6,6 +6,7 @@ from .filters import FlowerFilter
 from rest_framework.decorators import api_view
 from django.shortcuts import render
 
+
 #main page view
 
 def flower_list(request, format=None):

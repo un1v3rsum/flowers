@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowers</title>
 </head>
-<body>
-    <form align="center" method="get">
-        {{ filtered_flowers.form.as_p }}
-        <input type="submit" value="FILTER">
-    </form>
+    <body>
+        <h1 align="center">Flowers Database</h1>
+        <form align="center" method="get">
+            {{ filtered_flowers.form.as_p }}
+            <input type="submit" value="FILTER">
+        </form>
         <table id="flowers" style="width:75%" align="center" border="1px">
             <tr bgcolor="orange">
                 <th>Sepal length</th>
@@ -34,5 +35,5 @@
             </tr>
             {% endfor %}
         </table>
-</body>
+    </body>
 </html>
