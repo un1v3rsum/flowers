@@ -6,7 +6,7 @@ from django import forms
 class FlowerFilter(django_filters.FilterSet):
     class Meta:
         model = Flower
-        fields = ['sepal_length','sepal_ratio','sepal_width','petal_length','petal_ratio','petal_width','species']
+        fields = ['sepal_length','sepal_ratio','sepal_width','petal_length','petal_ratio','petal_width']
 
 
 

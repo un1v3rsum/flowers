@@ -16,7 +16,8 @@ TEST TASK by Vladimir Tiškin
 
 1. Open the terminal and type the command: "docker compose up --build" or start the container from docker desktop
 2. Open your browser and type: "http://127.0.0.1:8000/flowers" -> opens table-view with filtering options
-3. URL: ".../flowers/<int:id>" <- (type in an integer number) -> opens flower-view
+3. URL: ".../flowers/<int:id>" <- (type in an integer number) -> opens flower-view, allows data to be modified
+4. URL: ".../admin" -> opens the admin page, where new data can be added
 
 
 

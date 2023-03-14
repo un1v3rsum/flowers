@@ -7,9 +7,9 @@ from flowers import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('flowers/', views.flower_list),
-    path('flowers/<int:id>', views.flower_detail),
-    path('flowers/', views.my_view),
+    path('flowers/', views.flower_list),
+    path('flowers/<int:id>', views.flower_detail)
+
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

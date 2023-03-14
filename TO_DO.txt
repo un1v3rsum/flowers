@@ -1,10 +1,8 @@
 1. Read up on HTML, javascript, jQuery and datatables.
-*Got datatable to show from /base2.html but no additional functions (pagination, ordering, search) to work
 
 2. Adding/modifying/deleting data from the main page (.views flowers_list())
 
-3. Filter options in django (species: dropdown selection,
-                            sepal/petal size: from MIN to MAX selection & asc/desc order)
+3. Filter options in django (sepal/petal size: filter between two different values, get averages, list top 5 elements)
 *Django aggregation?
 
 4. Optimize add-ons, structurize project directory.
