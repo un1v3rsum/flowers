@@ -15,6 +15,7 @@ ALLOWED_HOSTS = []
 # Application definition
 # added rest_framework and flowers into app list
 INSTALLED_APPS = [
+    #added rest_framework and flowers
     'rest_framework',
     'flowers',
     'django.contrib.admin',
@@ -60,7 +61,7 @@ WSGI_APPLICATION = 'flowers.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+DATABASES = {#database default changed to sqlite3
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',

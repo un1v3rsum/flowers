@@ -7,22 +7,18 @@ from rest_framework.decorators import api_view
 from django.shortcuts import render
 
 
-#main page view
 
+#main page view
 def flower_list(request):
-    #flowers = Flower.objects.all()
+    #flowers list is filtere
     filtered_flowers = FlowerFilter(request.GET, queryset=Flower.objects.all())
-    #TO-DO -> make "species" filter selectable by attribute
-    #context['filtered_flowers'] = filtered_flowers
-    #context = {'flowers': flowers}
     context = {'filtered_flowers': filtered_flowers}
-    #TO-DO aggregate - average and max
-    #print(Flower.objects.aggregate(count = Count('id'), minSepalL = Min('sepal_length')))
+    #view is rendered on base.html template
     return render(request, 'base.html',context)
 
 
 
-#single flower view
+#single flower view in JSON format
 @api_view(['GET', 'PUT', 'DELETE'])
 def flower_detail(request,id, format=None):
     #checks if id number exist -> else: returns not_found error

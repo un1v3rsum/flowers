@@ -1,5 +1,7 @@
-<!DOCTYPE html lang="en">
+<!DOCTYPE html>
 <head>
+    <! jQuerys datatable plug-in, CSS files outsourced via url>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +15,9 @@
         <hr style="border-top:1px dotted #ccc;"/>
         {% block content %} {% endblock %}
     </div>
+
+    <! building the table - column titles>
+
         <table id="flowers" border="1px">
             <thead bgcolor="lightblue">
             <tr>
@@ -25,6 +30,9 @@
                 <th>Species</th>
             </tr>
             </thead>
+
+            <!body of the table from flower_list view>
+
             <tbody>
             {% for flower in filtered_flowers.qs %}
             <tr style="text-align:center;">
@@ -38,19 +46,27 @@
             </tr>
             {% endfor %}
             </tbody>
+
+            <! javascript files outsourced via url >
+
             <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
             <script src = "https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
             <script type="text/javascript">
+
+
+
             $(document).ready( function () {
             $('#flowers').DataTable();
              });
             </script>
+            <! starting the table function >
         </table>
+
+        <! added filtering funcionality with a reset button >
 
         <form align="left" method="get">
             {{ filtered_flowers.form.as_p }}
         <input type="submit" value="FILTER">
             <input type="button" onclick="window.location.href='http://127.0.0.1:8000/flowers/';" value="RESET" />
         </form>
-
     </body>
