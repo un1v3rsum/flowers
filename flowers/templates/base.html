@@ -6,34 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowers</title>
 </head>
-    <body>
-        <h1 align="center">Flowers Database</h1>
-        <form align="center" method="get">
-            {{ filtered_flowers.form.as_p }}
-            <input type="submit" value="FILTER">
-        </form>
-        <table id="flowers" style="width:75%" align="center" border="1px">
-            <tr bgcolor="orange">
-                <th>Sepal length</th>
-                <th>Sepal ratio</th>
-                <th>Sepal width</th>
-                <th>Petal length</th>
-                <th>Petal ratio</th>
-                <th>Petal width</th>
-                <th>Species</th>
-            </tr>
+<{% block content %}
+<h1>My Data Table</h1>
+<form method="get">
+    {{ filter_form.as_p }}
+    <button type="submit">Filter</button>
+</form>
+<table id="my-table">
+    <thead>
+    <tr>
+        <th class="sortable" data-field="name">Name</th>
+        <th class="sortable" data-field="age">Age</th>
+        <th class="sortable" data-field="gender">Gender</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for obj in data %}
+    <tr>
+        <td>{{ flower.sepal_length }}</td>
+        <td>{{ flower.sepal_ratio }}</td>
+        <td>{{ flower.sepal_width }}</td>
+        <td>{{ flower.petal_length }}</td>
+        <td>{{ flower.petal_ratio }}</td>
+        <td>{{ flower.petal_width }}</td>
+        <td>{{ flower.species }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
-            {% for flower in filtered_flowers.qs %}
-            <tr style="text-align:center;">
-                <td>{{ flower.sepal_length }}</td>
-                <td>{{ flower.sepal_ratio }}</td>
-                <td>{{ flower.sepal_width }}</td>
-                <td>{{ flower.petal_length }}</td>
-                <td>{{ flower.petal_ratio }}</td>
-                <td>{{ flower.petal_width }}</td>
-                <td>{{ flower.species }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+<script>
+        $(document).ready(function() {
+            $('#my-table').DataTable();
+            $('.sortable').on('click', function() {
+                var field = $(this).data('field');
+                var sortOrder = $(this).hasClass('sorting_asc') ? 'desc' : 'asc';
+                $('#my-table').DataTable().order([[field, sortOrder]]).draw();
+                $('.sortable').removeClass('sorting_asc sorting_desc');
+                $(this).addClass(sortOrder == 'asc' ? 'sorting_asc' : 'sorting_desc');
+            });
+        });
+    </script>
+{% endblock %}/html>
     </body>
-</html>
